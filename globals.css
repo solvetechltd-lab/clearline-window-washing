@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+:root {
+  --navy: #0b2545;
+  --sky-blue: #1e90ff;
+  --aqua: #e8f4fd;
+  --sun-yellow: #ffc93c;
+  --white: #ffffff;
+  --slate: #475569;
+  --background: #ffffff;
+  --foreground: #0b2545;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-sky-blue: var(--sky-blue);
+  --color-aqua: var(--aqua);
+  --color-sun-yellow: var(--sun-yellow);
+  --color-white: var(--white);
+  --color-slate: var(--slate);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
+}
+
+* {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-white text-navy;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  @apply font-bold;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    @apply !scroll-auto;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+a {
+  @apply text-sky-blue hover:underline;
+}
+
+button {
+  @apply transition-all;
+}
+
+input,
+textarea,
+select {
+  @apply transition-colors;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  @apply outline-none ring-2 ring-sky-blue ring-offset-2;
+}
